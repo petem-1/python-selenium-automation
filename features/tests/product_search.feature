@@ -19,3 +19,4 @@ Scenario Outline: User can search item in cart
   | product       |
   | paper towels  |
   | paper plates  |
+
