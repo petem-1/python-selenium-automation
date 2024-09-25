@@ -2,11 +2,9 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
-
-@given('Open target main page')
-def open_main(context):
-    context.driver.get('https://www.target.com/')
-
+ADD_TO_CART_BTN = (By.CSS_SELECTOR, "[id*='addToCartButton']")
+ADD_TO_CART_BTN_SIDE_NAV = (By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']")
+SIDE_NAV_PRODUCT_NAME = (By.CSS_SELECTOR, "[data-test='content-wrapper'] h4")
 
 # @when('Search for a product')
 # def search_product(context):
@@ -23,14 +21,16 @@ def open_main(context):
 #     expected_result = 'tea'
 #     assert expected_result in actual_result, f'Expected {expected_result}, got actual {actual_result}'
 #
-# @when('Click on Cart icon')
-# def click_cart(context):
+@when('Click on Cart icon')
+def click(context):
+    context.app.header.click_cart()
 #         # Click on Cart
 #         context.driver.find_element(By. CSS_SELECTOR, "[data-test='@web/CartIcon']").click()
 #         sleep(5)  # wait for search results page to load
 #
-# @then('Verify “Your cart is empty” message is shown')
-# def verify_results(context):
+@then('Verify “Your cart is empty” message is shown')
+def verify_text(context):
+    context.app.search_results.verify_cart_message()
 #         actual_result = context.driver.find_element(By. CSS_SELECTOR, "[data-test='boxEmptyMsg']").text
 #         expected_result = 'Your cart is empty'
 #         assert expected_result in actual_result, f'Expected {expected_result}, got actual {actual_result}'
