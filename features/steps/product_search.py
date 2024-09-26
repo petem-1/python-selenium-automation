@@ -2,13 +2,13 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
-ADD_TO_CART_BTN = (By.CSS_SELECTOR, "[id*='addToCartButton']")
-ADD_TO_CART_BTN_SIDE_NAV = (By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']")
-SIDE_NAV_PRODUCT_NAME = (By.CSS_SELECTOR, "[data-test='content-wrapper'] h4")
-
-LISTINGS = (By.CSS_SELECTOR, "[data-test='@web/site-top-of-funnel/ProductCardWrapper']")
-PRODUCT_TITLE = (By.CSS_SELECTOR, "[data-test='product-title']")
-PRODUCT_IMG = (By.CSS_SELECTOR, 'img')
+# ADD_TO_CART_BTN = (By.CSS_SELECTOR, "[id*='addToCartButton']")
+# ADD_TO_CART_BTN_SIDE_NAV = (By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']")
+# SIDE_NAV_PRODUCT_NAME = (By.CSS_SELECTOR, "[data-test='content-wrapper'] h4")
+#
+# LISTINGS = (By.CSS_SELECTOR, "[data-test='@web/site-top-of-funnel/ProductCardWrapper']")
+# PRODUCT_TITLE = (By.CSS_SELECTOR, "[data-test='product-title']")
+# PRODUCT_IMG = (By.CSS_SELECTOR, 'img')
 
 @given('Open Target main page')
 def open_target_circle(context):
@@ -41,7 +41,7 @@ def verify_products_name_img(context):
     sleep(4)
     context.driver.execute_script("window.scrollBy(0,2000)", "")
 
-    all_products = context.driver.find_elements(*LISTINGS)  # [WebEl1, WebEl2, WebEl3, WebEl4]
+# all_products = context.driver.find_elements(*LISTINGS)  # [WebEl1, WebEl2, WebEl3, WebEl4]
 # SEARCH_INPUT = (By.NAME, 'q')
 # SEARCH_SUBMIT = (By.NAME, 'btnK')
 
