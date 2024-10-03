@@ -32,3 +32,6 @@ Feature: Tests for Target Search functionality
     When Click Sign In
     When Click Sign In From Side Menu
     Then Verify Sign In form opened
+
+    Feature: Tests for Target App page
+
